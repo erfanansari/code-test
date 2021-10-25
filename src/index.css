@@ -1,0 +1,115 @@
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/iransans/eot/font.eot');
+    src: url('./fonts/iransans/eot/font.eot?#iefix') format('embedded-opentype'),
+        /* IE6-8 */ url('./fonts/iransans/woff2/IRANSansWeb\(FaNum\).woff2')
+            format('woff2'),
+        /* FF39+,Chrome36+, Opera24+*/ url('./fonts/iransans/woff/font.woff')
+            format('woff'),
+        /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('./fonts/iransans/ttf/font.ttf')
+            format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('./fonts/iransans/eot/IRANSansWeb(FaNum)_Bold.eot');
+    src: url('./fonts/iransans/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix')
+            format('embedded-opentype'),
+        /* IE6-8 */ url('./fonts/iransans/woff2/IRANSansWeb(FaNum)_Bold.woff2')
+            format('woff2'),
+        /* FF39+,Chrome36+, Opera24+*/
+            url('./fonts/iransans/woff/IRANSansWeb(FaNum)_Bold.woff')
+            format('woff'),
+        /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('./fonts/iransans/ttf/IRANSansWeb(FaNum)_Bold.ttf')
+            format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/iransans/eot/IRANSansWeb(FaNum)_Medium.eot');
+    src: url('./fonts/iransans/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix')
+            format('embedded-opentype'),
+        /* IE6-8 */
+            url('./fonts/iransans/woff2/IRANSansWeb(FaNum)_Medium.woff2')
+            format('woff2'),
+        /* FF39+,Chrome36+, Opera24+*/
+            url('./fonts/iransans/woff/IRANSansWeb(FaNum)_Medium.woff')
+            format('woff'),
+        /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('./fonts/iransans/ttf/IRANSansWeb(FaNum)_Medium.ttf')
+            format('truetype');
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'IRANSans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a {
+    text-decoration: none;
+}
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+button {
+    border-radius: 10px;
+    display: flex;
+    outline: none;
+    color: white;
+    background: black;
+    font-family: IRANSans;
+    cursor: pointer;
+    border: none;
+}
+button:hover {
+    background: var(--primary);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 50px;
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+}
+
+@media screen and (max-width: 599px) {
+    .main {
+        margin-top: 2.7rem;
+    }
+}
+:root {
+    --primary: #ef1b2b;
+    --secondary: #f0f0f1;
+    --dark: #03060a;
+    --light: #f7f7f8;
+}
+/* #F7F7F8 menu hover gray also input 
+#F0F0F1 input hover
+#03060A input border
+#EF1B2B red */

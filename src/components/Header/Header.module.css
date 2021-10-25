@@ -1,0 +1,135 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    text-align: center;
+    position: relative;
+}
+
+.searchBox {
+    flex: 2;
+    position: relative;
+}
+
+@media screen and (max-width: 599px) {
+    .searchBox {
+        position: absolute;
+        width: 100vw;
+        top: 4.1rem;
+    }
+}
+
+.searchBox input {
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    border: 2px solid transparent;
+    width: 100%;
+    background: var(--light);
+    font-family: IRANSans;
+    height: 2.5rem;
+    padding: 0 1rem;
+    direction: rtl;
+}
+
+.searchBox input:focus {
+    border: 2px solid var(--dark);
+}
+.searchBox input:hover {
+    background: var(--secondary);
+}
+.searchBox input:focus ~ button {
+    visibility: visible;
+    opacity: 1;
+}
+
+.searchBox button {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    height: 80%;
+    opacity: 0;
+    visibility: hidden;
+    align-items: center;
+}
+
+.searchBox button svg {
+    margin-left: 0.2rem;
+}
+
+.logo,
+.panel {
+    flex: 0.75;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.panel img {
+    width: 45px;
+}
+.logo {
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+}
+.logo a {
+    display: flex;
+    margin-right: 1rem;
+}
+.menu {
+    width: 65px;
+}
+
+.searchResults {
+    position: absolute;
+    z-index: 10;
+    background: white;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.searchResults .movies {
+    display: flex;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    justify-content: flex-end;
+    transition: background 0.1s ease-in-out;
+    align-items: center;
+}
+.searchResults .movies:hover {
+    background: var(--secondary);
+}
+.searchResults .allResults {
+    align-items: center;
+    font-size: 12px;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    display: flex;
+}
+.searchResults .allResults a {
+    color: var(--primary);
+    font-size: 10px;
+    margin-right: 0.3rem;
+}
+.searchResults .movies .date {
+    color: #bbb;
+    margin: 0 1rem 0 0.5rem;
+}
+.searchResults .movies .name {
+    color: #03060a;
+}
+
+.searchResults img {
+    width: 50px;
+    border-radius: 10px;
+}

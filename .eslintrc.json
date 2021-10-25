@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "prefer-const": "error",
+        "no-var": "error",
+        "func-names": "off"
+    },
+    "parser": "babel-eslint"
+}

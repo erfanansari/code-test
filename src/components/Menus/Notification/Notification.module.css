@@ -1,0 +1,60 @@
+@media screen and (max-width: 599px) {
+    .notificationMenu {
+        left: 0 !important;
+        width: 100vw !important;
+        top: 3rem !important;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .notificationMenu {
+        width: 220% !important;
+        left: 5rem !important;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+    .notificationMenu {
+        width: 180% !important;
+        left: 5rem !important;
+    }
+}
+
+.notificationMenu {
+    position: absolute;
+    width: 120%;
+    top: 2.5rem;
+    z-index: 1;
+    left: 10rem;
+    border-radius: 12px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}
+.notificationItem:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.notificationItem {
+    font-size: 13px;
+    display: flex;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
+    align-items: center;
+    color: var(--dark);
+    text-decoration: none;
+    justify-content: space-between;
+    transition: background 0.2s ease-in-out;
+}
+.notificationItem:last-child {
+    border-radius: 12px;
+    padding: 0.9rem;
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: var(--dark);
+    color: var(--secondary);
+}
+.notificationItem:last-child:hover {
+    background-color: var(--primary);
+}
+
+.notificationItem:hover {
+    background: var(--secondary);
+}
