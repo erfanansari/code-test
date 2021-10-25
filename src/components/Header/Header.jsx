@@ -1,4 +1,8 @@
-import { IoSettingsSharp, IoChevronBackOutline } from 'react-icons/io5'
+import {
+    IoSettingsSharp,
+    IoChevronBackOutline,
+    IoLogInOutline,
+} from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
 import LanguagesMenu from '../Menus/Languages'
@@ -8,6 +12,7 @@ import { useEffect, useState } from 'react'
 import { useDebounce } from '../../utils/hooks/useDebounce'
 
 export default function Header() {
+    const auth = true
     const [munesOpen, setMenuesOpen] = useState({
         language: false,
         notification: false,
@@ -37,15 +42,23 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.panel}>
-                <ProfileMenu
-                    munesOpen={munesOpen}
-                    setMenuesOpen={setMenuesOpen}
-                />
-
-                <NotificationMenu
-                    munesOpen={munesOpen}
-                    setMenuesOpen={setMenuesOpen}
-                />
+                {auth ? (
+                    <>
+                        <ProfileMenu
+                            munesOpen={munesOpen}
+                            setMenuesOpen={setMenuesOpen}
+                        />
+                        <NotificationMenu
+                            munesOpen={munesOpen}
+                            setMenuesOpen={setMenuesOpen}
+                        />
+                    </>
+                ) : (
+                    <button className={styles.login}>
+                        عضویت
+                        <IoLogInOutline size={25} />
+                    </button>
+                )}
                 <LanguagesMenu
                     munesOpen={munesOpen}
                     setMenuesOpen={setMenuesOpen}
@@ -126,7 +139,7 @@ export default function Header() {
                 <Link to="/">
                     <img src="/logo.png" alt="logo" />
                 </Link>
-                <img className={styles.menu} src="/menu.png" alt="menu" />
+                <img className={styles.menuLogo} src="/menu.png" alt="menu" />
             </div>
         </header>
     )
