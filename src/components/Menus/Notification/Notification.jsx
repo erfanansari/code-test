@@ -37,11 +37,11 @@ export default function NotificationMenu({ munesOpen, setMenuesOpen }) {
                         exit="hide"
                         className={styles.notificationMenu}
                     >
-                        {messages.map((message) => (
+                        {messages.map((message, i) => (
                             <Link
                                 to="/"
                                 className={styles.notificationItem}
-                                key={messages}
+                                key={i}
                             >
                                 <IoChevronBackOutline color="#bbb" />
                                 <div

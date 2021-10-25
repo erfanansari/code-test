@@ -3,6 +3,22 @@ import Flags from 'country-flag-icons/react/1x1'
 import { animationVariants } from '../../../utils/hooks/animationVariants'
 import styles from './Languages.module.css'
 
+const Flag = ({ country, ...props }) => {
+    const FlagComponent = Flags[country]
+    return <FlagComponent {...props} />
+}
+const languages = [
+    ['GB', 'English'],
+    ['ES', 'Spanish'],
+    ['RU', 'Russian'],
+    ['JP', 'Japananse'],
+    ['IN', 'India'],
+    ['DE', 'German'],
+    ['PL', 'Polish'],
+    ['AE', 'Arabic'],
+    ['TR', 'Turkish'],
+]
+
 export default function LanguagesMenu({ munesOpen, setMenuesOpen }) {
     return (
         <>
@@ -16,8 +32,9 @@ export default function LanguagesMenu({ munesOpen, setMenuesOpen }) {
                 }
                 className={styles.flag}
             >
-                <Flags.IR title="IR" />
+                <Flag country="IR" title="Farsi" />
             </button>
+
             <AnimatePresence>
                 {munesOpen.language && (
                     <motion.div
@@ -27,42 +44,12 @@ export default function LanguagesMenu({ munesOpen, setMenuesOpen }) {
                         exit="hide"
                         className={styles.languagesMenu}
                     >
-                        <div className={styles.flag}>
-                            <Flags.GB title="English" />
-                            <p>English</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.ES title="Spanish" />
-                            <p>Spanish</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.RU title="Russian" />
-                            <p>Russian</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.JP title="Japananse" />
-                            <p>Japananse</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.IN title="India" />
-                            <p>India</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.DE title="German" />
-                            <p>German</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.PL title="Polish" />
-                            <p>Polish</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.AE title="Arabic" />
-                            <p>Arabic</p>
-                        </div>
-                        <div className={styles.flag}>
-                            <Flags.TR title="Turkish" />
-                            <p>Turkish</p>
-                        </div>
+                        {languages.map(([code, name]) => (
+                            <div className={styles.flag} key={code}>
+                                <Flag country={code} title={name} />
+                                <p>{name}</p>
+                            </div>
+                        ))}
                     </motion.div>
                 )}
             </AnimatePresence>
